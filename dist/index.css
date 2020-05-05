@@ -1,0 +1,102 @@
+:root {
+    --nav: black;
+    --font: white;
+    --font-hover: rgb(204, 221, 127);
+}
+
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    font-family: 'Playfair Display', serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Berkshire Swash', cursive;
+}
+
+h1 {
+    font-size: 5em;
+    color: var(--font);
+    margin: 0.2em 0;
+}
+
+h1 span {
+    color: var(--font-hover);
+}
+
+h2 {
+    font-size: 3em;
+    color: var(--font);
+    margin: 0.5em 0;
+    font-family: 'Playfair Display', serif;
+}
+
+p {
+    color: var(--font);
+    line-height: 2em;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+}
+
+#main-nav {
+    background-color: var(--nav);
+    color: var(--font);
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#logo {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2.5em;
+    line-height: 1.7em;
+    height: 1.7em;
+    grid-column: 2;
+    color: var(--font-hover);
+}
+
+#nav {
+    color: var(--font);
+    text-align: right;
+    font-size: 1.3em;
+    height: 3.2em;
+    line-height: 3.2em;
+    letter-spacing: 0.1em;
+    grid-column: 3;
+}
+
+#nav ul li {
+    text-decoration: none; 
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    padding: 0 0.8em;
+}
+
+a:link {
+    color: var(--font);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--font-hover);
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    margin-top: 5em; 
+}
+
+#text {
+    margin: 5em 0;
+    grid-column: 2;
+    padding: 2em;
+    background-color: rgb(0, 0, 0, .4);
+}
+
