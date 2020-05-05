@@ -1,4 +1,4 @@
-const home = (() => {
+const contact = (() => {
     const body      = document.querySelector("body");
     const container = document.createElement("div");
     const title     = document.createElement("h1");
@@ -32,18 +32,20 @@ const home = (() => {
     }
 
     const fillElementsWithContent = () => {
-        title.textContent = "Pho";
+        title.textContent = "Contact Us";
         span.textContent = "♥";
-        subtitle.textContent = "Wirklich schonmal erlebt?";
-        text.textContent = "Ein purer Genuss aus dämpfender Suppe, dem besten Biorindfleisch aus der Region und frischen und duftenden Kräutern wie Minze und Koriander. Pho ist nicht nur ein Leckerbissen, sondern ein Leckererlebnis.";
-        text2.textContent = "Ähh, und ich glaube, die Frau da rechts, isst gar kein Pho.";
+        subtitle.textContent = "Let's keep in touch";
+        text.textContent = "Basin Street 09123 | New Orleans ";
+        text2.textContent = "Phone: +49 412 9412 | chef@phophoall.com";
     }
 
     const setBackground = () => {
-        body.style.backgroundImage = "url('../images/woman-eating.jpg')";
-        body.style.backgroundPosition = "top";
+        body.style.backgroundImage = "url('../images/contact.jpg')";
+        body.style.backgroundPosition = "center center";
     }
+
+
     return { addContent };
 })();
 
-export { home }; 
+export { contact }; 

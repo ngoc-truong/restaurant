@@ -1,24 +1,39 @@
 import { home } from "./home";
 import { nav } from "./nav";
+import { about } from "./about";
+import { contact } from "./contact";
+import { menu } from "./menu";
 
 const Dom = (() => {
     const content       = document.querySelector("#content");
     const navigation    = document.querySelector("#main-nav");
     const body          = document.querySelector("body");
+    const pic           = document.querySelector("#picture");
 
+    const initialize = () => {
+        createHome();
+    }
 
     const createHome = () => {
-        body.style.backgroundImage = "url('../images/woman-eating.jpg')";
-        body.style.backgroundPosition = "top";
-
-        createNav();
-        content.appendChild(home.initializeContent());
+        resetContent();
+        content.appendChild(home.addContent());
     }
 
     const createAbout = () => {
-        body.style.backgroundImage = "url('../images/restaurant-outside.jpg')";
-        body.style.backgroundPosition = "center center";
-        createNav();
+        resetContent();
+        content.appendChild(about.addContent());
+        content.appendChild(about.addPicture());
+    }
+
+    const createMenu = () => {
+        resetContent();
+        content.appendChild(menu.addContent());
+        content.appendChild(menu.addPicture());
+    }
+
+    const createContact = () => {
+        resetContent();
+        content.appendChild(contact.addContent());
     }
 
     const createNav = () => {
@@ -27,20 +42,36 @@ const Dom = (() => {
         navigation.appendChild(nav.getNav());
     }
 
-    return { createHome, createAbout };
+
+
+    const resetContent = () => {
+        content.textContent = "";
+    }
+
+    return { initialize, createNav, createHome, createAbout, createMenu, createContact };
 })();
-Dom.createAbout();
 
-const logo = document.querySelector("#logo");
-const about = document.querySelector("#about");
 
-logo.addEventListener("click", (e) => {
+Dom.createNav();
+Dom.initialize();
+
+const logoLink    = document.querySelector("#logo");
+const aboutLink   = document.querySelector("#about");
+const menuLink    = document.querySelector("#menu");
+const contactLink = document.querySelector("#contact");
+
+logoLink.addEventListener("click", (e) => {
     Dom.createHome();
-});
+})
 
-about.addEventListener("click"), (e) => {
+aboutLink.addEventListener("click", (e) => {
     Dom.createAbout();
-}
+})
 
+menuLink.addEventListener("click", (e) => {
+    Dom.createMenu();
+})
 
-
+contactLink.addEventListener("click", (e) => {
+    Dom.createContact();
+})

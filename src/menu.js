@@ -1,4 +1,4 @@
-const home = (() => {
+const menu = (() => {
     const body      = document.querySelector("body");
     const container = document.createElement("div");
     const title     = document.createElement("h1");
@@ -6,10 +6,15 @@ const home = (() => {
     const text      = document.createElement("p");
     const text2     = document.createElement("p");
     const span      = document.createElement("span");
+    const picture   = document.createElement("img");
 
     const addContent = () => {
         createContent();
         return container;
+    }
+
+    const addPicture = () => {
+        return picture;
     }
 
     const createContent = () => {
@@ -29,21 +34,26 @@ const home = (() => {
 
     const setClassesAndIds = () => {
         container.id = "text";
+        picture.id = "picture";
+        picture.src = "../images/pho1.jpg";
+        text2.classList.add("price");
     }
 
     const fillElementsWithContent = () => {
-        title.textContent = "Pho";
+        title.textContent = "Pho Bo";
         span.textContent = "♥";
-        subtitle.textContent = "Wirklich schonmal erlebt?";
-        text.textContent = "Ein purer Genuss aus dämpfender Suppe, dem besten Biorindfleisch aus der Region und frischen und duftenden Kräutern wie Minze und Koriander. Pho ist nicht nur ein Leckerbissen, sondern ein Leckererlebnis.";
-        text2.textContent = "Ähh, und ich glaube, die Frau da rechts, isst gar kein Pho.";
+        subtitle.textContent = "Pho mit Rindfleisch";
+        text.textContent = "Nach südvietnamesischer Tradition, yum yum.";
+        text2.textContent = "| 9.5 € |";
     }
 
     const setBackground = () => {
-        body.style.backgroundImage = "url('../images/woman-eating.jpg')";
-        body.style.backgroundPosition = "top";
+        body.style.backgroundImage = "url('../images/menu.jpg')";
+        body.style.backgroundPosition = "center center";
     }
-    return { addContent };
+
+
+    return { addContent, addPicture };
 })();
 
-export { home }; 
+export { menu }; 
